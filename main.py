@@ -16,6 +16,6 @@ if Flag_Status('r'):
     psql_db.commit()
     psql_cursor.close()
     psql_db.close()
-    Send_Mail(text_mail, 'cdnbytes summary')
+    Send_Mail(text_mail, 'segments delete summary')
 else:
     Send_Mail('etltoolbox application failure not recognized', 'etltoolbox application failure not recognized')
