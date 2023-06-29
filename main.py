@@ -9,7 +9,7 @@ if Flag_Status('r'):
     psql_db=psycopg2.connect(db_data_connect)
     psql_cursor=psql_db.cursor()
     date_now=datetime.datetime.now()
-    date=date_now-relativedelta(days=15)
+    date=date_now-relativedelta(days=7)
     date_sql=str(datetime.datetime.strftime(date, "%Y-%m-%d"))
     psql_cursor.execute(f"DELETE FROM new_segmentos WHERE datetime LIKE'%{date_sql}%';")
     text_mail=psql_cursor.statusmessage
